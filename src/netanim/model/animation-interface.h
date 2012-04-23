@@ -563,7 +563,8 @@ private:
   void StopAnimation (bool onlyAnimation = false);
 
   void DevTxTrace (std::string context,
-                   Ptr<const Packet> p,
+                   uint32_t,
+		   Ptr<const Packet> p,
                    Ptr<NetDevice> tx,
                    Ptr<NetDevice> rx,
                    Time txTime,
