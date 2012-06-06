@@ -68,7 +68,7 @@ PrintAttributes (TypeId tid, std::ostream &os)
 	      )
 	    {
 	      os << reference;
-	    }
+	}
 	  os << info.checker->GetUnderlyingTypeInformation () << listLineStop << std::endl;
 	}
       if (info.flags & TypeId::ATTR_CONSTRUCT && info.accessor->HasSetter ())
@@ -384,17 +384,20 @@ PrintHelp (const char *program_name)
             << std::endl
             << "Options:" << std::endl
             << "  --help        : print these options" << std::endl
-            << "  --output-text : format output as plain text" << std::endl;  
+            << "  --output-text : format output as plain text" << std::endl
+	    << "  --group <group> : print information only for this group" << std::endl;  
 }
 
 int main (int argc, char *argv[])
 {
   bool outputText = false;
   char *programName = argv[0];
+  std::string group = "";
 
   argv++;
+  argc--;
 
-  while (*argv != 0)
+  while (argc > 0 && *argv != 0)
     {
       char *arg = *argv;
 
@@ -407,6 +410,17 @@ int main (int argc, char *argv[])
         {
           outputText = true;
         }
+      else if (strcmp(arg, "--group") == 0)
+	{
+	  argv ++;
+	  argc --;
+	  if (argc == 0 || argv == 0)
+	    {
+	      PrintHelp (programName);
+	      return 0;
+	    }
+	  group = *argv;
+	}
       else
         {
           // un-recognized command-line argument
@@ -414,6 +428,7 @@ int main (int argc, char *argv[])
           return 0;
         }
       argv++;
+      argc--;
     }
 
   if (outputText)
@@ -527,6 +542,11 @@ int main (int argc, char *argv[])
 	  continue;
 	}
 
+      if (group != "" && tid.GetGroupName () != group)
+	{
+	  continue;
+	}
+
       // Capitalize all of letters in the name so that it sorts
       // correctly in the map.
       std::string name = tid.GetName ();
@@ -596,19 +616,19 @@ int main (int argc, char *argv[])
 		    << headingStop  << std::endl;
 	  PrintAttributes (tid, std::cout);
 
-	  TypeId tmp = tid.GetParent ();
-	  while (tmp.GetParent () != tmp)
-	    {
-	      if (tmp.GetAttributeN () != 0)
-		{
+	TypeId tmp = tid.GetParent ();
+	while (tmp.GetParent () != tmp)
+	  {
+	    if (tmp.GetAttributeN () != 0)
+	      {
 		  std::cout << headingStart
 			    << "Attributes defined in parent class "
 			    << tmp.GetName ()
 			    << headingStop << std::endl;
-		  PrintAttributes (tmp, std::cout);
-		}
-	      tmp = tmp.GetParent ();
-	    }
+		PrintAttributes (tmp, std::cout);
+	      }
+	    tmp = tmp.GetParent ();
+	  }
 	}  // Attributes
 
       // Tracing -------------
@@ -654,6 +674,12 @@ int main (int argc, char *argv[])
 	{
 	  continue;
 	}
+
+      if (group != "" && tid.GetGroupName () != group)
+	{
+	  continue;
+	}
+      
       std::cout << boldStart << tid.GetName ()
 		<< boldStop  << breakHtmlOnly << std::endl
 		<< listStart << std::endl;
@@ -679,6 +705,12 @@ int main (int argc, char *argv[])
 	{
 	  continue;
 	}
+
+      if (group != "" && tid.GetGroupName () != group)
+	{
+	  continue;
+	}
+
       std::cout << boldStart << tid.GetName ()
 		<< boldStop  << breakHtmlOnly << std::endl
 		<< listStart << std::endl;
@@ -714,7 +746,7 @@ int main (int argc, char *argv[])
 		<< ": " << (*i)->GetHelp () << "(" << val.Get () << ")"
 		<<   listLineStop << std::endl;
     }
-  std::cout << listStop    << std::endl
+  std::cout << listStop << std::endl
 	    << commentStop << std::endl;
 
 
