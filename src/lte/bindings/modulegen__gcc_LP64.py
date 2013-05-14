@@ -22,10 +22,10 @@ def register_types(module):
     
     ## log.h (module 'core'): ns3::LogLevel [enumeration]
     module.add_enum('LogLevel', ['LOG_NONE', 'LOG_ERROR', 'LOG_LEVEL_ERROR', 'LOG_WARN', 'LOG_LEVEL_WARN', 'LOG_DEBUG', 'LOG_LEVEL_DEBUG', 'LOG_INFO', 'LOG_LEVEL_INFO', 'LOG_FUNCTION', 'LOG_LEVEL_FUNCTION', 'LOG_LOGIC', 'LOG_LEVEL_LOGIC', 'LOG_ALL', 'LOG_LEVEL_ALL', 'LOG_PREFIX_FUNC', 'LOG_PREFIX_TIME', 'LOG_PREFIX_NODE', 'LOG_PREFIX_LEVEL', 'LOG_PREFIX_ALL'], import_from_module='ns.core')
-    ## ff-mac-common.h (module 'lte'): ns3::Result_e [enumeration]
-    module.add_enum('Result_e', ['SUCCESS', 'FAILURE'])
     ## ff-mac-common.h (module 'lte'): ns3::SetupRelease_e [enumeration]
     module.add_enum('SetupRelease_e', ['setup', 'release'])
+    ## ff-mac-common.h (module 'lte'): ns3::Result_e [enumeration]
+    module.add_enum('Result_e', ['SUCCESS', 'FAILURE'])
     ## ff-mac-common.h (module 'lte'): ns3::CeBitmap_e [enumeration]
     module.add_enum('CeBitmap_e', ['TA', 'DRX', 'CR'])
     ## ff-mac-common.h (module 'lte'): ns3::NormalExtended_e [enumeration]
@@ -1337,24 +1337,18 @@ def register_types(module):
     module.add_container('std::map< unsigned int, unsigned int >', ('unsigned int', 'unsigned int'), container_type='map')
     module.add_container('std::list< ns3::Ptr< ns3::LteControlMessage > >', 'ns3::Ptr< ns3::LteControlMessage >', container_type='list')
     module.add_container('std::list< ns3::UlDciLteControlMessage >', 'ns3::UlDciLteControlMessage', container_type='list')
-    typehandlers.add_type_alias('std::map< ns3::ImsiLcidPair_t, unsigned int, std::less< ns3::ImsiLcidPair_t >, std::allocator< std::pair< ns3::ImsiLcidPair_t const, unsigned int > > >', 'ns3::Uint32Map')
-    typehandlers.add_type_alias('std::map< ns3::ImsiLcidPair_t, unsigned int, std::less< ns3::ImsiLcidPair_t >, std::allocator< std::pair< ns3::ImsiLcidPair_t const, unsigned int > > >*', 'ns3::Uint32Map*')
-    typehandlers.add_type_alias('std::map< ns3::ImsiLcidPair_t, unsigned int, std::less< ns3::ImsiLcidPair_t >, std::allocator< std::pair< ns3::ImsiLcidPair_t const, unsigned int > > >&', 'ns3::Uint32Map&')
-    typehandlers.add_type_alias('std::map< ns3::ImsiLcidPair_t, unsigned long long, std::less< ns3::ImsiLcidPair_t >, std::allocator< std::pair< ns3::ImsiLcidPair_t const, unsigned long long > > >', 'ns3::Uint64Map')
-    typehandlers.add_type_alias('std::map< ns3::ImsiLcidPair_t, unsigned long long, std::less< ns3::ImsiLcidPair_t >, std::allocator< std::pair< ns3::ImsiLcidPair_t const, unsigned long long > > >*', 'ns3::Uint64Map*')
-    typehandlers.add_type_alias('std::map< ns3::ImsiLcidPair_t, unsigned long long, std::less< ns3::ImsiLcidPair_t >, std::allocator< std::pair< ns3::ImsiLcidPair_t const, unsigned long long > > >&', 'ns3::Uint64Map&')
+    typehandlers.add_type_alias('std::map< ns3::ImsiLcidPair_t, unsigned long, std::less< ns3::ImsiLcidPair_t >, std::allocator< std::pair< ns3::ImsiLcidPair_t const, unsigned long > > >', 'ns3::Uint64Map')
+    typehandlers.add_type_alias('std::map< ns3::ImsiLcidPair_t, unsigned long, std::less< ns3::ImsiLcidPair_t >, std::allocator< std::pair< ns3::ImsiLcidPair_t const, unsigned long > > >*', 'ns3::Uint64Map*')
+    typehandlers.add_type_alias('std::map< ns3::ImsiLcidPair_t, unsigned long, std::less< ns3::ImsiLcidPair_t >, std::allocator< std::pair< ns3::ImsiLcidPair_t const, unsigned long > > >&', 'ns3::Uint64Map&')
     typehandlers.add_type_alias('ns3::Callback< void, ns3::Ptr< ns3::Packet const >, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty >', 'ns3::GenericPhyTxEndCallback')
     typehandlers.add_type_alias('ns3::Callback< void, ns3::Ptr< ns3::Packet const >, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty >*', 'ns3::GenericPhyTxEndCallback*')
     typehandlers.add_type_alias('ns3::Callback< void, ns3::Ptr< ns3::Packet const >, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty >&', 'ns3::GenericPhyTxEndCallback&')
-    typehandlers.add_type_alias('ns3::Callback< void, ns3::Ptr< ns3::Packet const >, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty >', 'ns3::LtePhyTxEndCallback')
-    typehandlers.add_type_alias('ns3::Callback< void, ns3::Ptr< ns3::Packet const >, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty >*', 'ns3::LtePhyTxEndCallback*')
-    typehandlers.add_type_alias('ns3::Callback< void, ns3::Ptr< ns3::Packet const >, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty >&', 'ns3::LtePhyTxEndCallback&')
     typehandlers.add_type_alias('std::vector< std::vector< std::vector< ns3::RlcPduListElement_s, std::allocator< ns3::RlcPduListElement_s > >, std::allocator< std::vector< ns3::RlcPduListElement_s, std::allocator< ns3::RlcPduListElement_s > > > >, std::allocator< std::vector< std::vector< ns3::RlcPduListElement_s, std::allocator< ns3::RlcPduListElement_s > >, std::allocator< std::vector< ns3::RlcPduListElement_s, std::allocator< ns3::RlcPduListElement_s > > > > > >', 'ns3::DlHarqRlcPduListBuffer_t')
     typehandlers.add_type_alias('std::vector< std::vector< std::vector< ns3::RlcPduListElement_s, std::allocator< ns3::RlcPduListElement_s > >, std::allocator< std::vector< ns3::RlcPduListElement_s, std::allocator< ns3::RlcPduListElement_s > > > >, std::allocator< std::vector< std::vector< ns3::RlcPduListElement_s, std::allocator< ns3::RlcPduListElement_s > >, std::allocator< std::vector< ns3::RlcPduListElement_s, std::allocator< ns3::RlcPduListElement_s > > > > > >*', 'ns3::DlHarqRlcPduListBuffer_t*')
     typehandlers.add_type_alias('std::vector< std::vector< std::vector< ns3::RlcPduListElement_s, std::allocator< ns3::RlcPduListElement_s > >, std::allocator< std::vector< ns3::RlcPduListElement_s, std::allocator< ns3::RlcPduListElement_s > > > >, std::allocator< std::vector< std::vector< ns3::RlcPduListElement_s, std::allocator< ns3::RlcPduListElement_s > >, std::allocator< std::vector< ns3::RlcPduListElement_s, std::allocator< ns3::RlcPduListElement_s > > > > > >&', 'ns3::DlHarqRlcPduListBuffer_t&')
-    typehandlers.add_type_alias('std::vector< ns3::HarqProcessInfoElement_t, std::allocator< ns3::HarqProcessInfoElement_t > >', 'ns3::HarqProcessInfoList_t')
-    typehandlers.add_type_alias('std::vector< ns3::HarqProcessInfoElement_t, std::allocator< ns3::HarqProcessInfoElement_t > >*', 'ns3::HarqProcessInfoList_t*')
-    typehandlers.add_type_alias('std::vector< ns3::HarqProcessInfoElement_t, std::allocator< ns3::HarqProcessInfoElement_t > >&', 'ns3::HarqProcessInfoList_t&')
+    typehandlers.add_type_alias('ns3::Callback< void, ns3::Ptr< ns3::Packet const >, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty >', 'ns3::LtePhyTxEndCallback')
+    typehandlers.add_type_alias('ns3::Callback< void, ns3::Ptr< ns3::Packet const >, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty >*', 'ns3::LtePhyTxEndCallback*')
+    typehandlers.add_type_alias('ns3::Callback< void, ns3::Ptr< ns3::Packet const >, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty >&', 'ns3::LtePhyTxEndCallback&')
     typehandlers.add_type_alias('void ( * ) ( std::ostream & ) *', 'ns3::LogNodePrinter')
     typehandlers.add_type_alias('void ( * ) ( std::ostream & ) **', 'ns3::LogNodePrinter*')
     typehandlers.add_type_alias('void ( * ) ( std::ostream & ) *&', 'ns3::LogNodePrinter&')
@@ -1367,6 +1361,9 @@ def register_types(module):
     typehandlers.add_type_alias('ns3::Callback< void, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty >', 'ns3::LtePhyRxDataEndErrorCallback')
     typehandlers.add_type_alias('ns3::Callback< void, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty >*', 'ns3::LtePhyRxDataEndErrorCallback*')
     typehandlers.add_type_alias('ns3::Callback< void, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty >&', 'ns3::LtePhyRxDataEndErrorCallback&')
+    typehandlers.add_type_alias('std::vector< ns3::HarqProcessInfoElement_t, std::allocator< ns3::HarqProcessInfoElement_t > >', 'ns3::HarqProcessInfoList_t')
+    typehandlers.add_type_alias('std::vector< ns3::HarqProcessInfoElement_t, std::allocator< ns3::HarqProcessInfoElement_t > >*', 'ns3::HarqProcessInfoList_t*')
+    typehandlers.add_type_alias('std::vector< ns3::HarqProcessInfoElement_t, std::allocator< ns3::HarqProcessInfoElement_t > >&', 'ns3::HarqProcessInfoList_t&')
     typehandlers.add_type_alias('ns3::Callback< void, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty >', 'ns3::LtePhyRxCtrlEndErrorCallback')
     typehandlers.add_type_alias('ns3::Callback< void, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty >*', 'ns3::LtePhyRxCtrlEndErrorCallback*')
     typehandlers.add_type_alias('ns3::Callback< void, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty >&', 'ns3::LtePhyRxCtrlEndErrorCallback&')
@@ -1391,9 +1388,6 @@ def register_types(module):
     typehandlers.add_type_alias('std::map< ns3::TbId_t, ns3::tbInfo_t, std::less< ns3::TbId_t >, std::allocator< std::pair< ns3::TbId_t const, ns3::tbInfo_t > > >', 'ns3::expectedTbs_t')
     typehandlers.add_type_alias('std::map< ns3::TbId_t, ns3::tbInfo_t, std::less< ns3::TbId_t >, std::allocator< std::pair< ns3::TbId_t const, ns3::tbInfo_t > > >*', 'ns3::expectedTbs_t*')
     typehandlers.add_type_alias('std::map< ns3::TbId_t, ns3::tbInfo_t, std::less< ns3::TbId_t >, std::allocator< std::pair< ns3::TbId_t const, ns3::tbInfo_t > > >&', 'ns3::expectedTbs_t&')
-    typehandlers.add_type_alias('uint32_t', 'ns3::SpectrumModelUid_t')
-    typehandlers.add_type_alias('uint32_t*', 'ns3::SpectrumModelUid_t*')
-    typehandlers.add_type_alias('uint32_t&', 'ns3::SpectrumModelUid_t&')
     typehandlers.add_type_alias('ns3::Vector3D', 'ns3::Vector')
     typehandlers.add_type_alias('ns3::Vector3D*', 'ns3::Vector*')
     typehandlers.add_type_alias('ns3::Vector3D&', 'ns3::Vector&')
@@ -1411,15 +1405,21 @@ def register_types(module):
     typehandlers.add_type_alias('ns3::Callback< void, std::list< ns3::Ptr< ns3::LteControlMessage >, std::allocator< ns3::Ptr< ns3::LteControlMessage > > >, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty >', 'ns3::LtePhyRxCtrlEndOkCallback')
     typehandlers.add_type_alias('ns3::Callback< void, std::list< ns3::Ptr< ns3::LteControlMessage >, std::allocator< ns3::Ptr< ns3::LteControlMessage > > >, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty >*', 'ns3::LtePhyRxCtrlEndOkCallback*')
     typehandlers.add_type_alias('ns3::Callback< void, std::list< ns3::Ptr< ns3::LteControlMessage >, std::allocator< ns3::Ptr< ns3::LteControlMessage > > >, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty >&', 'ns3::LtePhyRxCtrlEndOkCallback&')
-    typehandlers.add_type_alias('std::map< ns3::ImsiLcidPair_t, double, std::less< ns3::ImsiLcidPair_t >, std::allocator< std::pair< ns3::ImsiLcidPair_t const, double > > >', 'ns3::DoubleMap')
-    typehandlers.add_type_alias('std::map< ns3::ImsiLcidPair_t, double, std::less< ns3::ImsiLcidPair_t >, std::allocator< std::pair< ns3::ImsiLcidPair_t const, double > > >*', 'ns3::DoubleMap*')
-    typehandlers.add_type_alias('std::map< ns3::ImsiLcidPair_t, double, std::less< ns3::ImsiLcidPair_t >, std::allocator< std::pair< ns3::ImsiLcidPair_t const, double > > >&', 'ns3::DoubleMap&')
+    typehandlers.add_type_alias('uint32_t', 'ns3::SpectrumModelUid_t')
+    typehandlers.add_type_alias('uint32_t*', 'ns3::SpectrumModelUid_t*')
+    typehandlers.add_type_alias('uint32_t&', 'ns3::SpectrumModelUid_t&')
+    typehandlers.add_type_alias('std::map< ns3::ImsiLcidPair_t, unsigned int, std::less< ns3::ImsiLcidPair_t >, std::allocator< std::pair< ns3::ImsiLcidPair_t const, unsigned int > > >', 'ns3::Uint32Map')
+    typehandlers.add_type_alias('std::map< ns3::ImsiLcidPair_t, unsigned int, std::less< ns3::ImsiLcidPair_t >, std::allocator< std::pair< ns3::ImsiLcidPair_t const, unsigned int > > >*', 'ns3::Uint32Map*')
+    typehandlers.add_type_alias('std::map< ns3::ImsiLcidPair_t, unsigned int, std::less< ns3::ImsiLcidPair_t >, std::allocator< std::pair< ns3::ImsiLcidPair_t const, unsigned int > > >&', 'ns3::Uint32Map&')
     typehandlers.add_type_alias('ns3::Callback< void, ns3::UlInfoListElement_s, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty >', 'ns3::LtePhyUlHarqFeedbackCallback')
     typehandlers.add_type_alias('ns3::Callback< void, ns3::UlInfoListElement_s, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty >*', 'ns3::LtePhyUlHarqFeedbackCallback*')
     typehandlers.add_type_alias('ns3::Callback< void, ns3::UlInfoListElement_s, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty >&', 'ns3::LtePhyUlHarqFeedbackCallback&')
     typehandlers.add_type_alias('std::vector< std::vector< ns3::RlcPduListElement_s, std::allocator< ns3::RlcPduListElement_s > >, std::allocator< std::vector< ns3::RlcPduListElement_s, std::allocator< ns3::RlcPduListElement_s > > > >', 'ns3::RlcPduList_t')
     typehandlers.add_type_alias('std::vector< std::vector< ns3::RlcPduListElement_s, std::allocator< ns3::RlcPduListElement_s > >, std::allocator< std::vector< ns3::RlcPduListElement_s, std::allocator< ns3::RlcPduListElement_s > > > >*', 'ns3::RlcPduList_t*')
     typehandlers.add_type_alias('std::vector< std::vector< ns3::RlcPduListElement_s, std::allocator< ns3::RlcPduListElement_s > >, std::allocator< std::vector< ns3::RlcPduListElement_s, std::allocator< ns3::RlcPduListElement_s > > > >&', 'ns3::RlcPduList_t&')
+    typehandlers.add_type_alias('std::map< ns3::ImsiLcidPair_t, double, std::less< ns3::ImsiLcidPair_t >, std::allocator< std::pair< ns3::ImsiLcidPair_t const, double > > >', 'ns3::DoubleMap')
+    typehandlers.add_type_alias('std::map< ns3::ImsiLcidPair_t, double, std::less< ns3::ImsiLcidPair_t >, std::allocator< std::pair< ns3::ImsiLcidPair_t const, double > > >*', 'ns3::DoubleMap*')
+    typehandlers.add_type_alias('std::map< ns3::ImsiLcidPair_t, double, std::less< ns3::ImsiLcidPair_t >, std::allocator< std::pair< ns3::ImsiLcidPair_t const, double > > >&', 'ns3::DoubleMap&')
     typehandlers.add_type_alias('std::vector< ns3::DlDciListElement_s, std::allocator< ns3::DlDciListElement_s > >', 'ns3::DlHarqProcessesDciBuffer_t')
     typehandlers.add_type_alias('std::vector< ns3::DlDciListElement_s, std::allocator< ns3::DlDciListElement_s > >*', 'ns3::DlHarqProcessesDciBuffer_t*')
     typehandlers.add_type_alias('std::vector< ns3::DlDciListElement_s, std::allocator< ns3::DlDciListElement_s > >&', 'ns3::DlHarqProcessesDciBuffer_t&')
@@ -1442,9 +1442,9 @@ def register_types(module):
     typehandlers.add_type_alias('std::vector< std::vector< ns3::Ptr< ns3::PacketBurst >, std::allocator< ns3::Ptr< ns3::PacketBurst > > >, std::allocator< std::vector< ns3::Ptr< ns3::PacketBurst >, std::allocator< ns3::Ptr< ns3::PacketBurst > > > > >', 'ns3::DlHarqProcessesBuffer_t')
     typehandlers.add_type_alias('std::vector< std::vector< ns3::Ptr< ns3::PacketBurst >, std::allocator< ns3::Ptr< ns3::PacketBurst > > >, std::allocator< std::vector< ns3::Ptr< ns3::PacketBurst >, std::allocator< ns3::Ptr< ns3::PacketBurst > > > > >*', 'ns3::DlHarqProcessesBuffer_t*')
     typehandlers.add_type_alias('std::vector< std::vector< ns3::Ptr< ns3::PacketBurst >, std::allocator< ns3::Ptr< ns3::PacketBurst > > >, std::allocator< std::vector< ns3::Ptr< ns3::PacketBurst >, std::allocator< ns3::Ptr< ns3::PacketBurst > > > > >&', 'ns3::DlHarqProcessesBuffer_t&')
-    typehandlers.add_type_alias('std::map< ns3::ImsiLcidPair_t, ns3::Ptr< ns3::MinMaxAvgTotalCalculator< unsigned long long > >, std::less< ns3::ImsiLcidPair_t >, std::allocator< std::pair< ns3::ImsiLcidPair_t const, ns3::Ptr< ns3::MinMaxAvgTotalCalculator< unsigned long long > > > > >', 'ns3::Uint64StatsMap')
-    typehandlers.add_type_alias('std::map< ns3::ImsiLcidPair_t, ns3::Ptr< ns3::MinMaxAvgTotalCalculator< unsigned long long > >, std::less< ns3::ImsiLcidPair_t >, std::allocator< std::pair< ns3::ImsiLcidPair_t const, ns3::Ptr< ns3::MinMaxAvgTotalCalculator< unsigned long long > > > > >*', 'ns3::Uint64StatsMap*')
-    typehandlers.add_type_alias('std::map< ns3::ImsiLcidPair_t, ns3::Ptr< ns3::MinMaxAvgTotalCalculator< unsigned long long > >, std::less< ns3::ImsiLcidPair_t >, std::allocator< std::pair< ns3::ImsiLcidPair_t const, ns3::Ptr< ns3::MinMaxAvgTotalCalculator< unsigned long long > > > > >&', 'ns3::Uint64StatsMap&')
+    typehandlers.add_type_alias('std::map< ns3::ImsiLcidPair_t, ns3::Ptr< ns3::MinMaxAvgTotalCalculator< unsigned long > >, std::less< ns3::ImsiLcidPair_t >, std::allocator< std::pair< ns3::ImsiLcidPair_t const, ns3::Ptr< ns3::MinMaxAvgTotalCalculator< unsigned long > > > > >', 'ns3::Uint64StatsMap')
+    typehandlers.add_type_alias('std::map< ns3::ImsiLcidPair_t, ns3::Ptr< ns3::MinMaxAvgTotalCalculator< unsigned long > >, std::less< ns3::ImsiLcidPair_t >, std::allocator< std::pair< ns3::ImsiLcidPair_t const, ns3::Ptr< ns3::MinMaxAvgTotalCalculator< unsigned long > > > > >*', 'ns3::Uint64StatsMap*')
+    typehandlers.add_type_alias('std::map< ns3::ImsiLcidPair_t, ns3::Ptr< ns3::MinMaxAvgTotalCalculator< unsigned long > >, std::less< ns3::ImsiLcidPair_t >, std::allocator< std::pair< ns3::ImsiLcidPair_t const, ns3::Ptr< ns3::MinMaxAvgTotalCalculator< unsigned long > > > > >&', 'ns3::Uint64StatsMap&')
     typehandlers.add_type_alias('std::vector< unsigned char, std::allocator< unsigned char > >', 'ns3::UlHarqProcessesStatus_t')
     typehandlers.add_type_alias('std::vector< unsigned char, std::allocator< unsigned char > >*', 'ns3::UlHarqProcessesStatus_t*')
     typehandlers.add_type_alias('std::vector< unsigned char, std::allocator< unsigned char > >&', 'ns3::UlHarqProcessesStatus_t&')
@@ -2291,10 +2291,6 @@ def register_Ns3BufferIterator_methods(root_module, cls):
     cls.add_method('Next', 
                    'void', 
                    [param('uint32_t', 'delta')])
-    ## buffer.h (module 'network'): uint8_t ns3::Buffer::Iterator::PeekU8() [member function]
-    cls.add_method('PeekU8', 
-                   'uint8_t', 
-                   [])
     ## buffer.h (module 'network'): void ns3::Buffer::Iterator::Prev() [member function]
     cls.add_method('Prev', 
                    'void', 
@@ -2307,10 +2303,6 @@ def register_Ns3BufferIterator_methods(root_module, cls):
     cls.add_method('Read', 
                    'void', 
                    [param('uint8_t *', 'buffer'), param('uint32_t', 'size')])
-    ## buffer.h (module 'network'): void ns3::Buffer::Iterator::Read(ns3::Buffer::Iterator start, uint32_t size) [member function]
-    cls.add_method('Read', 
-                   'void', 
-                   [param('ns3::Buffer::Iterator', 'start'), param('uint32_t', 'size')])
     ## buffer.h (module 'network'): uint16_t ns3::Buffer::Iterator::ReadLsbtohU16() [member function]
     cls.add_method('ReadLsbtohU16', 
                    'uint16_t', 
@@ -7404,6 +7396,26 @@ def register_Ns3RadioBearerStatsConnector_methods(root_module, cls):
     cls.add_method('EnsureConnected', 
                    'void', 
                    [])
+    ## radio-bearer-stats-connector.h (module 'lte'): static uint16_t ns3::RadioBearerStatsConnector::FindCellIdFromEnbRlcPath(std::string path) [member function]
+    cls.add_method('FindCellIdFromEnbRlcPath', 
+                   'uint16_t', 
+                   [param('std::string', 'path')], 
+                   is_static=True)
+    ## radio-bearer-stats-connector.h (module 'lte'): static uint16_t ns3::RadioBearerStatsConnector::FindCellIdFromUeRlcPath(std::string path) [member function]
+    cls.add_method('FindCellIdFromUeRlcPath', 
+                   'uint16_t', 
+                   [param('std::string', 'path')], 
+                   is_static=True)
+    ## radio-bearer-stats-connector.h (module 'lte'): static uint64_t ns3::RadioBearerStatsConnector::FindImsiFromEnbRlcPath(std::string path) [member function]
+    cls.add_method('FindImsiFromEnbRlcPath', 
+                   'uint64_t', 
+                   [param('std::string', 'path')], 
+                   is_static=True)
+    ## radio-bearer-stats-connector.h (module 'lte'): static uint64_t ns3::RadioBearerStatsConnector::FindImsiFromUeRlcPath(std::string path) [member function]
+    cls.add_method('FindImsiFromUeRlcPath', 
+                   'uint64_t', 
+                   [param('std::string', 'path')], 
+                   is_static=True)
     ## radio-bearer-stats-connector.h (module 'lte'): static void ns3::RadioBearerStatsConnector::NotifyConnectionReconfigurationEnb(ns3::RadioBearerStatsConnector * c, std::string context, uint64_t imsi, uint16_t cellid, uint16_t rnti) [member function]
     cls.add_method('NotifyConnectionReconfigurationEnb', 
                    'void', 
@@ -8251,25 +8263,12 @@ def register_Ns3UplinkLteGlobalPathlossDatabase_methods(root_module, cls):
 
 def register_Ns3Vector2D_methods(root_module, cls):
     cls.add_output_stream_operator()
-    cls.add_binary_numeric_operator('*', root_module['ns3::Vector2D'], root_module['ns3::Vector2D'], param('ns3::Vector2D const &', 'right'))
-    cls.add_binary_numeric_operator('*', root_module['ns3::Vector2D'], root_module['ns3::Vector2D'], param('double', 'right'))
-    cls.add_binary_numeric_operator('+', root_module['ns3::Vector2D'], root_module['ns3::Vector2D'], param('ns3::Vector2D const &', 'right'))
-    cls.add_binary_numeric_operator('+', root_module['ns3::Vector2D'], root_module['ns3::Vector2D'], param('double', 'right'))
-    cls.add_inplace_numeric_operator('+=', param('ns3::Vector2D const &', 'right'))
-    cls.add_inplace_numeric_operator('+=', param('double', 'right'))
-    cls.add_binary_numeric_operator('-', root_module['ns3::Vector2D'], root_module['ns3::Vector2D'], param('ns3::Vector2D const &', 'right'))
-    cls.add_binary_numeric_operator('/', root_module['ns3::Vector2D'], root_module['ns3::Vector2D'], param('double', 'right'))
     ## vector.h (module 'core'): ns3::Vector2D::Vector2D(ns3::Vector2D const & arg0) [copy constructor]
     cls.add_constructor([param('ns3::Vector2D const &', 'arg0')])
     ## vector.h (module 'core'): ns3::Vector2D::Vector2D(double _x, double _y) [constructor]
     cls.add_constructor([param('double', '_x'), param('double', '_y')])
     ## vector.h (module 'core'): ns3::Vector2D::Vector2D() [constructor]
     cls.add_constructor([])
-    ## vector.h (module 'core'): double ns3::Vector2D::GetLength() const [member function]
-    cls.add_method('GetLength', 
-                   'double', 
-                   [], 
-                   is_const=True)
     ## vector.h (module 'core'): ns3::Vector2D::x [variable]
     cls.add_instance_attribute('x', 'double', is_const=False)
     ## vector.h (module 'core'): ns3::Vector2D::y [variable]
@@ -8278,25 +8277,12 @@ def register_Ns3Vector2D_methods(root_module, cls):
 
 def register_Ns3Vector3D_methods(root_module, cls):
     cls.add_output_stream_operator()
-    cls.add_binary_numeric_operator('*', root_module['ns3::Vector3D'], root_module['ns3::Vector3D'], param('ns3::Vector3D const &', 'right'))
-    cls.add_binary_numeric_operator('*', root_module['ns3::Vector3D'], root_module['ns3::Vector3D'], param('double', 'right'))
-    cls.add_binary_numeric_operator('+', root_module['ns3::Vector3D'], root_module['ns3::Vector3D'], param('ns3::Vector3D const &', 'right'))
-    cls.add_binary_numeric_operator('+', root_module['ns3::Vector3D'], root_module['ns3::Vector3D'], param('double', 'right'))
-    cls.add_inplace_numeric_operator('+=', param('ns3::Vector3D const &', 'right'))
-    cls.add_inplace_numeric_operator('+=', param('double', 'right'))
-    cls.add_binary_numeric_operator('-', root_module['ns3::Vector3D'], root_module['ns3::Vector3D'], param('ns3::Vector3D const &', 'right'))
-    cls.add_binary_numeric_operator('/', root_module['ns3::Vector3D'], root_module['ns3::Vector3D'], param('double', 'right'))
     ## vector.h (module 'core'): ns3::Vector3D::Vector3D(ns3::Vector3D const & arg0) [copy constructor]
     cls.add_constructor([param('ns3::Vector3D const &', 'arg0')])
     ## vector.h (module 'core'): ns3::Vector3D::Vector3D(double _x, double _y, double _z) [constructor]
     cls.add_constructor([param('double', '_x'), param('double', '_y'), param('double', '_z')])
     ## vector.h (module 'core'): ns3::Vector3D::Vector3D() [constructor]
     cls.add_constructor([])
-    ## vector.h (module 'core'): double ns3::Vector3D::GetLength() const [member function]
-    cls.add_method('GetLength', 
-                   'double', 
-                   [], 
-                   is_const=True)
     ## vector.h (module 'core'): ns3::Vector3D::x [variable]
     cls.add_instance_attribute('x', 'double', is_const=False)
     ## vector.h (module 'core'): ns3::Vector3D::y [variable]
@@ -8367,6 +8353,20 @@ def register_Ns3FdtbfqsFlowPerf_t_methods(root_module, cls):
 
 def register_Ns3Int64x64_t_methods(root_module, cls):
     cls.add_binary_comparison_operator('!=')
+    cls.add_inplace_numeric_operator('+=', param('ns3::int64x64_t const &', 'right'))
+    cls.add_binary_numeric_operator('-', root_module['ns3::int64x64_t'], root_module['ns3::int64x64_t'], param('long long unsigned int const', 'right'))
+    cls.add_binary_numeric_operator('-', root_module['ns3::int64x64_t'], root_module['ns3::int64x64_t'], param('long unsigned int const', 'right'))
+    cls.add_binary_numeric_operator('-', root_module['ns3::int64x64_t'], root_module['ns3::int64x64_t'], param('unsigned int const', 'right'))
+    cls.add_binary_numeric_operator('-', root_module['ns3::int64x64_t'], root_module['ns3::int64x64_t'], param('short unsigned int const', 'right'))
+    cls.add_binary_numeric_operator('-', root_module['ns3::int64x64_t'], root_module['ns3::int64x64_t'], param('unsigned char const', 'right'))
+    cls.add_binary_numeric_operator('-', root_module['ns3::int64x64_t'], root_module['ns3::int64x64_t'], param('long long int const', 'right'))
+    cls.add_binary_numeric_operator('-', root_module['ns3::int64x64_t'], root_module['ns3::int64x64_t'], param('long int const', 'right'))
+    cls.add_binary_numeric_operator('-', root_module['ns3::int64x64_t'], root_module['ns3::int64x64_t'], param('int const', 'right'))
+    cls.add_binary_numeric_operator('-', root_module['ns3::int64x64_t'], root_module['ns3::int64x64_t'], param('short int const', 'right'))
+    cls.add_binary_numeric_operator('-', root_module['ns3::int64x64_t'], root_module['ns3::int64x64_t'], param('signed char const', 'right'))
+    cls.add_binary_numeric_operator('-', root_module['ns3::int64x64_t'], root_module['ns3::int64x64_t'], param('double const', 'right'))
+    cls.add_unary_numeric_operator('-')
+    cls.add_binary_numeric_operator('-', root_module['ns3::int64x64_t'], root_module['ns3::int64x64_t'], param('ns3::int64x64_t const &', 'right'))
     cls.add_binary_numeric_operator('*', root_module['ns3::int64x64_t'], root_module['ns3::int64x64_t'], param('long long unsigned int const', 'right'))
     cls.add_binary_numeric_operator('*', root_module['ns3::int64x64_t'], root_module['ns3::int64x64_t'], param('long unsigned int const', 'right'))
     cls.add_binary_numeric_operator('*', root_module['ns3::int64x64_t'], root_module['ns3::int64x64_t'], param('unsigned int const', 'right'))
@@ -8391,19 +8391,6 @@ def register_Ns3Int64x64_t_methods(root_module, cls):
     cls.add_binary_numeric_operator('+', root_module['ns3::int64x64_t'], root_module['ns3::int64x64_t'], param('signed char const', 'right'))
     cls.add_binary_numeric_operator('+', root_module['ns3::int64x64_t'], root_module['ns3::int64x64_t'], param('double const', 'right'))
     cls.add_binary_numeric_operator('+', root_module['ns3::int64x64_t'], root_module['ns3::int64x64_t'], param('ns3::int64x64_t const &', 'right'))
-    cls.add_binary_numeric_operator('-', root_module['ns3::int64x64_t'], root_module['ns3::int64x64_t'], param('long long unsigned int const', 'right'))
-    cls.add_binary_numeric_operator('-', root_module['ns3::int64x64_t'], root_module['ns3::int64x64_t'], param('long unsigned int const', 'right'))
-    cls.add_binary_numeric_operator('-', root_module['ns3::int64x64_t'], root_module['ns3::int64x64_t'], param('unsigned int const', 'right'))
-    cls.add_binary_numeric_operator('-', root_module['ns3::int64x64_t'], root_module['ns3::int64x64_t'], param('short unsigned int const', 'right'))
-    cls.add_binary_numeric_operator('-', root_module['ns3::int64x64_t'], root_module['ns3::int64x64_t'], param('unsigned char const', 'right'))
-    cls.add_binary_numeric_operator('-', root_module['ns3::int64x64_t'], root_module['ns3::int64x64_t'], param('long long int const', 'right'))
-    cls.add_binary_numeric_operator('-', root_module['ns3::int64x64_t'], root_module['ns3::int64x64_t'], param('long int const', 'right'))
-    cls.add_binary_numeric_operator('-', root_module['ns3::int64x64_t'], root_module['ns3::int64x64_t'], param('int const', 'right'))
-    cls.add_binary_numeric_operator('-', root_module['ns3::int64x64_t'], root_module['ns3::int64x64_t'], param('short int const', 'right'))
-    cls.add_binary_numeric_operator('-', root_module['ns3::int64x64_t'], root_module['ns3::int64x64_t'], param('signed char const', 'right'))
-    cls.add_binary_numeric_operator('-', root_module['ns3::int64x64_t'], root_module['ns3::int64x64_t'], param('double const', 'right'))
-    cls.add_unary_numeric_operator('-')
-    cls.add_binary_numeric_operator('-', root_module['ns3::int64x64_t'], root_module['ns3::int64x64_t'], param('ns3::int64x64_t const &', 'right'))
     cls.add_binary_numeric_operator('/', root_module['ns3::int64x64_t'], root_module['ns3::int64x64_t'], param('long long unsigned int const', 'right'))
     cls.add_binary_numeric_operator('/', root_module['ns3::int64x64_t'], root_module['ns3::int64x64_t'], param('long unsigned int const', 'right'))
     cls.add_binary_numeric_operator('/', root_module['ns3::int64x64_t'], root_module['ns3::int64x64_t'], param('unsigned int const', 'right'))
@@ -8419,7 +8406,6 @@ def register_Ns3Int64x64_t_methods(root_module, cls):
     cls.add_binary_comparison_operator('<')
     cls.add_binary_comparison_operator('>')
     cls.add_inplace_numeric_operator('*=', param('ns3::int64x64_t const &', 'right'))
-    cls.add_inplace_numeric_operator('+=', param('ns3::int64x64_t const &', 'right'))
     cls.add_inplace_numeric_operator('-=', param('ns3::int64x64_t const &', 'right'))
     cls.add_inplace_numeric_operator('/=', param('ns3::int64x64_t const &', 'right'))
     cls.add_output_stream_operator()
@@ -8629,6 +8615,11 @@ def register_Ns3EpsBearerTag_methods(root_module, cls):
                    'ns3::TypeId', 
                    [], 
                    is_const=True, is_virtual=True)
+    ## eps-bearer-tag.h (module 'lte'): uint8_t ns3::EpsBearerTag::GetLayer() const [member function]
+    cls.add_method('GetLayer', 
+                   'uint8_t', 
+                   [], 
+                   is_const=True)
     ## eps-bearer-tag.h (module 'lte'): uint16_t ns3::EpsBearerTag::GetRnti() const [member function]
     cls.add_method('GetRnti', 
                    'uint16_t', 
@@ -9554,11 +9545,6 @@ def register_Ns3Object_methods(root_module, cls):
                    'ns3::TypeId', 
                    [], 
                    is_const=True, is_virtual=True)
-    ## object.h (module 'core'): ns3::Ptr<ns3::MobilityModel> ns3::Object::GetObject() const [member function]
-    cls.add_method('GetObject', 
-                   'ns3::Ptr< ns3::MobilityModel >', 
-                   [], 
-                   is_const=True, template_parameters=['ns3::MobilityModel'])
     ## object.h (module 'core'): static ns3::TypeId ns3::Object::GetTypeId() [member function]
     cls.add_method('GetTypeId', 
                    'ns3::TypeId', 
@@ -10893,13 +10879,13 @@ def register_Ns3SpectrumSignalParameters_methods(root_module, cls):
     return
 
 def register_Ns3SpectrumValue_methods(root_module, cls):
+    cls.add_unary_numeric_operator('-')
+    cls.add_binary_numeric_operator('-', root_module['ns3::SpectrumValue'], root_module['ns3::SpectrumValue'], param('double', 'right'))
+    cls.add_binary_numeric_operator('-', root_module['ns3::SpectrumValue'], root_module['ns3::SpectrumValue'], param('ns3::SpectrumValue const &', 'right'))
     cls.add_binary_numeric_operator('*', root_module['ns3::SpectrumValue'], root_module['ns3::SpectrumValue'], param('double', 'right'))
     cls.add_binary_numeric_operator('*', root_module['ns3::SpectrumValue'], root_module['ns3::SpectrumValue'], param('ns3::SpectrumValue const &', 'right'))
     cls.add_binary_numeric_operator('+', root_module['ns3::SpectrumValue'], root_module['ns3::SpectrumValue'], param('double', 'right'))
     cls.add_binary_numeric_operator('+', root_module['ns3::SpectrumValue'], root_module['ns3::SpectrumValue'], param('ns3::SpectrumValue const &', 'right'))
-    cls.add_unary_numeric_operator('-')
-    cls.add_binary_numeric_operator('-', root_module['ns3::SpectrumValue'], root_module['ns3::SpectrumValue'], param('double', 'right'))
-    cls.add_binary_numeric_operator('-', root_module['ns3::SpectrumValue'], root_module['ns3::SpectrumValue'], param('ns3::SpectrumValue const &', 'right'))
     cls.add_binary_numeric_operator('/', root_module['ns3::SpectrumValue'], root_module['ns3::SpectrumValue'], param('double', 'right'))
     cls.add_binary_numeric_operator('/', root_module['ns3::SpectrumValue'], root_module['ns3::SpectrumValue'], param('ns3::SpectrumValue const &', 'right'))
     cls.add_output_stream_operator()
@@ -10964,11 +10950,11 @@ def register_Ns3SpectrumValue_methods(root_module, cls):
 
 def register_Ns3Time_methods(root_module, cls):
     cls.add_binary_comparison_operator('!=')
-    cls.add_binary_numeric_operator('+', root_module['ns3::Time'], root_module['ns3::Time'], param('ns3::Time const &', 'right'))
+    cls.add_inplace_numeric_operator('+=', param('ns3::Time const &', 'right'))
     cls.add_binary_numeric_operator('-', root_module['ns3::Time'], root_module['ns3::Time'], param('ns3::Time const &', 'right'))
+    cls.add_binary_numeric_operator('+', root_module['ns3::Time'], root_module['ns3::Time'], param('ns3::Time const &', 'right'))
     cls.add_binary_comparison_operator('<')
     cls.add_binary_comparison_operator('>')
-    cls.add_inplace_numeric_operator('+=', param('ns3::Time const &', 'right'))
     cls.add_inplace_numeric_operator('-=', param('ns3::Time const &', 'right'))
     cls.add_output_stream_operator()
     cls.add_binary_comparison_operator('<=')
@@ -12626,6 +12612,10 @@ def register_Ns3EpcSgwPgwApplication_methods(root_module, cls):
     cls.add_constructor([param('ns3::EpcSgwPgwApplication const &', 'arg0')])
     ## epc-sgw-pgw-application.h (module 'lte'): ns3::EpcSgwPgwApplication::EpcSgwPgwApplication(ns3::Ptr<ns3::VirtualNetDevice> const tunDevice, ns3::Ptr<ns3::Socket> const s1uSocket) [constructor]
     cls.add_constructor([param('ns3::Ptr< ns3::VirtualNetDevice > const', 'tunDevice'), param('ns3::Ptr< ns3::Socket > const', 's1uSocket')])
+    ## epc-sgw-pgw-application.h (module 'lte'): uint32_t ns3::EpcSgwPgwApplication::ActivateS1Bearer(ns3::Ipv4Address ueAddr, ns3::Ipv4Address enbAddr, ns3::Ptr<ns3::EpcTft> tft) [member function]
+    cls.add_method('ActivateS1Bearer', 
+                   'uint32_t', 
+                   [param('ns3::Ipv4Address', 'ueAddr'), param('ns3::Ipv4Address', 'enbAddr'), param('ns3::Ptr< ns3::EpcTft >', 'tft')])
     ## epc-sgw-pgw-application.h (module 'lte'): void ns3::EpcSgwPgwApplication::AddEnb(uint16_t cellId, ns3::Ipv4Address enbAddr, ns3::Ipv4Address sgwAddr) [member function]
     cls.add_method('AddEnb', 
                    'void', 
@@ -16289,11 +16279,6 @@ def register_Ns3MobilityModel_methods(root_module, cls):
                    'double', 
                    [param('ns3::Ptr< ns3::MobilityModel const >', 'position')], 
                    is_const=True)
-    ## mobility-model.h (module 'mobility'): static ns3::Ptr<ns3::MobilityModel> ns3::MobilityModel::GetMobilityModel(ns3::Ptr<ns3::Object> node) [member function]
-    cls.add_method('GetMobilityModel', 
-                   'ns3::Ptr< ns3::MobilityModel >', 
-                   [param('ns3::Ptr< ns3::Object >', 'node')], 
-                   is_static=True)
     ## mobility-model.h (module 'mobility'): ns3::Vector ns3::MobilityModel::GetPosition() const [member function]
     cls.add_method('GetPosition', 
                    'ns3::Vector', 
@@ -19510,6 +19495,11 @@ def register_Ns3RrcConnectionReleaseHeader_methods(root_module, cls):
     ## lte-rrc-header.h (module 'lte'): ns3::LteRrcSap::RrcConnectionRelease ns3::RrcConnectionReleaseHeader::GetMessage() const [member function]
     cls.add_method('GetMessage', 
                    'ns3::LteRrcSap::RrcConnectionRelease', 
+                   [], 
+                   is_const=True)
+    ## lte-rrc-header.h (module 'lte'): uint8_t ns3::RrcConnectionReleaseHeader::GetRrcTransactionIdentifier() const [member function]
+    cls.add_method('GetRrcTransactionIdentifier', 
+                   'uint8_t', 
                    [], 
                    is_const=True)
     ## lte-rrc-header.h (module 'lte'): void ns3::RrcConnectionReleaseHeader::PreSerialize() const [member function]
