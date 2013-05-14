@@ -18,11 +18,46 @@ This release is not yet available.
 
 Supported platforms
 -------------------
-To be determined
+
+New user-visible features
+-------------------------
+
+Bugs fixed
+----------
+
+Known issues
+------------
+In general, known issues are tracked on the project tracker available
+at http://www.nsnam.org/bugzilla/
+
+Release 3.17
+============
+
+Availability
+------------
+This release is available from: 
+http://www.nsnam.org/release/ns-allinone-3.17.tar.bz2
+
+Supported platforms
+-------------------
+These platforms have been tested; others may work also:
+- Fedora Core 18 (32/64 bit) with g++-4.7.2
+- Fedora Core 17 (32/64 bit) with g++-4.7.0
+- Ubuntu 13.04 (32/64 bit) with g++-4.7.3
+- Ubuntu 12.10 (32/64 bit) with g++-4.6.3
+- Ubuntu 12.04 (32/64 bit) with g++-4.6.3
+- Ubuntu 10.04.4 LTS (64 bit) with g++-4.4.3
+- OS X Mountain Lion 10.8.3 with g++-4.2.1
+- FreeBSD 9.1-RELEASE (64 bit) with g++-4.2.1
 
 New user-visible features
 -------------------------
 - new TCP Westwood and Westwood+ models
+- new FdNetDevice model and associated helpers.  The FdNetDevice is able
+  to read and write from a file descriptor.  Various helpers are provided
+  to associate this descriptor with underlying devices or sockets on the 
+  host operating system, including a packet socket for emulation, and
+  tap devices including a version specialized for use on PlanetLab.
 - ns-3-click: it's now possible to (i) have Click pull random numbers from
   ns-3 and (ii) have ns-3 set "defines" in Click via the simulation file 
   (see src/click/examples/nsclick-defines.cc).
@@ -38,6 +73,7 @@ Bugs fixed
 - bug 1256 - Unnecessary SND.NXT advance, missing ACK for Out of Order segments
 - bug 1318 - Ipv6L3Protocol::LocalDeliver can get stuck in an infinte loop
 - bug 1409 - Add an attribute "SystemId" to configure the ID for MPI
+- bug 1421 - Frequency dependent propagation loss models need uniform Frequency / Lambda attribute
 - bug 1434 - DSR throughput not comparable to other protocols for manet example
 - bug 1502 - Shutdown on tcp socket seems to misbehave
 - bug 1503 - BlockAckManager infine loop
