@@ -83,8 +83,7 @@ public:
    * 
    * \return the TunnelEndpointIdentifier of this EPS bearer
    */
-  // not implemented
-  // uint32_t ActivateS1Bearer (Ipv4Address ueAddr, Ipv4Address enbAddr, Ptr<EpcTft> tft);
+  uint32_t ActivateS1Bearer (Ipv4Address ueAddr, Ipv4Address enbAddr, Ptr<EpcTft> tft);
 
   
   /** 

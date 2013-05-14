@@ -701,7 +701,7 @@ public:
   * Getter for m_rrcConnectionRelease attribute
   * @return m_rrcConnectionRelease
   */
-  // uint8_t GetRrcTransactionIdentifier () const;
+  uint8_t GetRrcTransactionIdentifier () const;
 
 private:
   LteRrcSap::RrcConnectionRelease m_rrcConnectionRelease;
