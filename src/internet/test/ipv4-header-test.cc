@@ -200,26 +200,26 @@ Ipv4HeaderTest::DoRun (void)
 
   std::vector <Ipv4Header::DscpType> vDscpTypes;
   vDscpTypes.push_back (Ipv4Header::DscpDefault);
-  vDscpTypes.push_back (Ipv4Header::DscpCS1);
-  vDscpTypes.push_back (Ipv4Header::DscpAF11);
-  vDscpTypes.push_back (Ipv4Header::DscpAF12);
-  vDscpTypes.push_back (Ipv4Header::DscpAF13);
-  vDscpTypes.push_back (Ipv4Header::DscpCS2);
-  vDscpTypes.push_back (Ipv4Header::DscpAF21);
-  vDscpTypes.push_back (Ipv4Header::DscpAF22);
-  vDscpTypes.push_back (Ipv4Header::DscpAF23);
-  vDscpTypes.push_back (Ipv4Header::DscpCS3);
-  vDscpTypes.push_back (Ipv4Header::DscpAF31);
-  vDscpTypes.push_back (Ipv4Header::DscpAF32);
-  vDscpTypes.push_back (Ipv4Header::DscpAF33);
-  vDscpTypes.push_back (Ipv4Header::DscpCS4);
-  vDscpTypes.push_back (Ipv4Header::DscpAF41);
-  vDscpTypes.push_back (Ipv4Header::DscpAF42);
-  vDscpTypes.push_back (Ipv4Header::DscpAF43);
-  vDscpTypes.push_back (Ipv4Header::DscpCS5);
-  vDscpTypes.push_back (Ipv4Header::DscpEF);
-  vDscpTypes.push_back (Ipv4Header::DscpCS6);
-  vDscpTypes.push_back (Ipv4Header::DscpCS7);
+  vDscpTypes.push_back (Ipv4Header::CS1);
+  vDscpTypes.push_back (Ipv4Header::AF11);
+  vDscpTypes.push_back (Ipv4Header::AF12);
+  vDscpTypes.push_back (Ipv4Header::AF13);
+  vDscpTypes.push_back (Ipv4Header::CS2);
+  vDscpTypes.push_back (Ipv4Header::AF21);
+  vDscpTypes.push_back (Ipv4Header::AF22);
+  vDscpTypes.push_back (Ipv4Header::AF23);
+  vDscpTypes.push_back (Ipv4Header::CS3);
+  vDscpTypes.push_back (Ipv4Header::AF31);
+  vDscpTypes.push_back (Ipv4Header::AF32);
+  vDscpTypes.push_back (Ipv4Header::AF33);
+  vDscpTypes.push_back (Ipv4Header::CS4);
+  vDscpTypes.push_back (Ipv4Header::AF41);
+  vDscpTypes.push_back (Ipv4Header::AF42);
+  vDscpTypes.push_back (Ipv4Header::AF43);
+  vDscpTypes.push_back (Ipv4Header::CS5);
+  vDscpTypes.push_back (Ipv4Header::EF);
+  vDscpTypes.push_back (Ipv4Header::CS6);
+  vDscpTypes.push_back (Ipv4Header::CS7);
 
   for (uint32_t i = 0; i < vDscpTypes.size (); i++)
     {

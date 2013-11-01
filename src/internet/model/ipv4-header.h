@@ -65,31 +65,31 @@ public:
     {
       DscpDefault = 0x00,
 
-      DscpCS1 = 0x20,
-      DscpAF11 = 0x28,
-      DscpAF12 = 0x30,
-      DscpAF13 = 0x38,
+      CS1 = 0x20,
+      AF11 = 0x28,
+      AF12 = 0x30,
+      AF13 = 0x38,
 
-      DscpCS2 = 0x40,
-      DscpAF21 = 0x48,
-      DscpAF22 = 0x50,
-      DscpAF23 = 0x58,
+      CS2 = 0x40,
+      AF21 = 0x48,
+      AF22 = 0x50,
+      AF23 = 0x58,
 
-      DscpCS3 = 0x60,
-      DscpAF31 = 0x68,
-      DscpAF32 = 0x70,
-      DscpAF33 = 0x78,
+      CS3 = 0x60,
+      AF31 = 0x68,
+      AF32 = 0x70,
+      AF33 = 0x78,
 
-      DscpCS4 = 0x80,
-      DscpAF41 = 0x88,
-      DscpAF42 = 0x90,
-      DscpAF43 = 0x98,
+      CS4 = 0x80,
+      AF41 = 0x88,
+      AF42 = 0x90,
+      AF43 = 0x98,
 
-      DscpCS5 = 0xA0,
-      DscpEF = 0xB8,
+      CS5 = 0xA0,
+      EF = 0xB8,
       
-      DscpCS6 = 0xC0,
-      DscpCS7 = 0xE0
+      CS6 = 0xC0,
+      CS7 = 0xE0
       
     };
   /**

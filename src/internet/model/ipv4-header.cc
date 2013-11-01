@@ -117,45 +117,45 @@ Ipv4Header::DscpTypeToString (DscpType dscp) const
     {
       case DscpDefault:
         return "Default";
-      case DscpCS1:
+      case CS1:
         return "CS1";
-      case DscpAF11:
+      case AF11:
         return "AF11";
-      case DscpAF12:
+      case AF12:
         return "AF12";
-      case DscpAF13:
+      case AF13:
         return "AF13";
-      case DscpCS2:
+      case CS2:
         return "CS2";
-      case DscpAF21:
+      case AF21:
         return "AF21";
-      case DscpAF22:
+      case AF22:
         return "AF22";
-      case DscpAF23:
+      case AF23:
         return "AF23";
-      case DscpCS3:
+      case CS3:
         return "CS3";
-      case DscpAF31:
+      case AF31:
         return "AF31";
-      case DscpAF32:
+      case AF32:
         return "AF32";
-      case DscpAF33:
+      case AF33:
         return "AF33";
-      case DscpCS4:
+      case CS4:
         return "CS4";
-      case DscpAF41:
+      case AF41:
         return "AF41";
-      case DscpAF42:
+      case AF42:
         return "AF42";
-      case DscpAF43:
+      case AF43:
         return "AF43";
-      case DscpCS5:
+      case CS5:
         return "CS5";
-      case DscpEF:
+      case EF:
         return "EF";
-      case DscpCS6:
+      case CS6:
         return "CS6";
-      case DscpCS7:
+      case CS7:
         return "CS7";
       default:
         return "Unrecognized DSCP";
