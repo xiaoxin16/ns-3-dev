@@ -215,7 +215,7 @@ V4Ping::Send ()
   echo.SetData (dataPacket);
   p->AddHeader (echo);
   Icmpv4Header header;
-  header.SetType (Icmpv4Header::DscpECHO);
+  header.SetType (Icmpv4Header::ECHO);
   header.SetCode (0);
   if (Node::ChecksumEnabled ())
     {

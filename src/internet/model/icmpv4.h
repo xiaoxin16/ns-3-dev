@@ -36,7 +36,7 @@ public:
   enum {
     ECHO_REPLY = 0,
     DEST_UNREACH = 3,
-    DscpECHO = 8,
+    ECHO = 8,
     TIME_EXCEEDED = 11
   };
 

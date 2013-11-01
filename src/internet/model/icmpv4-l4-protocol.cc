@@ -239,7 +239,7 @@ Icmpv4L4Protocol::Receive (Ptr<Packet> p,
   Icmpv4Header icmp;
   p->RemoveHeader (icmp);
   switch (icmp.GetType ()) {
-    case Icmpv4Header::DscpECHO:
+    case Icmpv4Header::ECHO:
       HandleEcho (p, icmp, header.GetSource (), header.GetDestination ());
       break;
     case Icmpv4Header::DEST_UNREACH:
