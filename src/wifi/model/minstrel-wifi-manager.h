@@ -117,8 +117,8 @@ private:
                                double ackSnr, WifiMode ackMode, double dataSnr);
   virtual void DoReportFinalRtsFailed (WifiRemoteStation *station);
   virtual void DoReportFinalDataFailed (WifiRemoteStation *station);
-  virtual WifiMode DoGetDataMode (WifiRemoteStation *station, uint32_t size);
-  virtual WifiMode DoGetRtsMode (WifiRemoteStation *station);
+ virtual WifiTxVector DoGetDataTxVector (WifiRemoteStation *station, uint32_t size);
+  virtual WifiTxVector DoGetRtsTxVector (WifiRemoteStation *station);
   virtual bool IsLowLatency (void) const;
 
   /// for estimating the TxTime of a packet with a given mode
@@ -161,7 +161,6 @@ private:
   Time m_updateStats;  ///< how frequent do we calculate the stats(1/10 seconds)
   double m_lookAroundRate;  ///< the % to try other rates than our current rate
   double m_ewmaLevel;  ///< exponential weighted moving average
-  uint32_t m_segmentSize;  ///< largest allowable segment size
   uint32_t m_sampleCol;  ///< number of sample columns
   uint32_t m_pktLen;  ///< packet length used  for calculate mode TxTime
   uint32_t m_nsupported;  ///< modes supported

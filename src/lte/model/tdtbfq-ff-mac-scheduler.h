@@ -71,10 +71,6 @@ struct tdtbfqsFlowPerf_t
 
 /**
  * \ingroup ff-api
- * \defgroup FF-API TdTbfqFfMacScheduler
- */
-/**
- * \ingroup TdTbfqFfMacScheduler
  * \brief Implements the SCHED SAP and CSCHED SAP for a Time Domain Token Bank Fair Queue  scheduler
  *
  * This class implements the interface defined by the FfMacScheduler abstract class
@@ -255,8 +251,6 @@ private:
   // Internal parameters
   FfMacCschedSapProvider::CschedCellConfigReqParameters m_cschedCellConfig;
 
-
-  double m_timeWindow;
 
   uint16_t m_nextRntiUl; // RNTI of the next user to be served next scheduling in UL
 

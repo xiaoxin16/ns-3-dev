@@ -23,9 +23,10 @@
 #define AP_WIFI_MAC_H
 
 #include "regular-wifi-mac.h"
-
+#include "ht-capabilities.h"
 #include "amsdu-subframe-header.h"
 #include "supported-rates.h"
+#include "ns3/random-variable-stream.h"
 
 namespace ns3 {
 
@@ -95,6 +96,16 @@ public:
    */
   void StartBeaconing (void);
 
+ /**
+  * Assign a fixed random variable stream number to the random variables
+  * used by this model.  Return the number of streams (possibly zero) that
+  * have been assigned.
+  *
+  * \param stream first stream index to use
+  * \return the number of stream indices assigned by this model
+  */
+  int64_t AssignStreams (int64_t stream);
+
 private:
   virtual void Receive (Ptr<Packet> packet, const WifiMacHeader *hdr);
   virtual void TxOk (const WifiMacHeader &hdr);
@@ -117,6 +128,7 @@ private:
   void SendProbeResp (Mac48Address to);
   void SendAssocResp (Mac48Address to, bool success);
   void SendOneBeacon (void);
+  HtCapabilities GetHtCapabilities (void) const;
   SupportedRates GetSupportedRates (void) const;
   void SetBeaconGeneration (bool enable);
   bool GetBeaconGeneration (void) const;
@@ -127,6 +139,8 @@ private:
   Time m_beaconInterval;
   bool m_enableBeaconGeneration;
   EventId m_beaconEvent;
+  Ptr<UniformRandomVariable> m_beaconJitter;
+  bool m_enableBeaconJitter;
 };
 
 } // namespace ns3

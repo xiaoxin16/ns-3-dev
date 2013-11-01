@@ -55,8 +55,8 @@ private:
                                double ackSnr, WifiMode ackMode, double dataSnr);
   virtual void DoReportFinalRtsFailed (WifiRemoteStation *station);
   virtual void DoReportFinalDataFailed (WifiRemoteStation *station);
-  virtual WifiMode DoGetDataMode (WifiRemoteStation *station, uint32_t size);
-  virtual WifiMode DoGetRtsMode (WifiRemoteStation *station);
+  virtual WifiTxVector DoGetDataTxVector (WifiRemoteStation *station, uint32_t size);
+  virtual WifiTxVector DoGetRtsTxVector (WifiRemoteStation *station);
   virtual bool DoNeedRts (WifiRemoteStation *station,
                           Ptr<const Packet> packet, bool normally);
   virtual bool IsLowLatency (void) const;
@@ -77,7 +77,6 @@ private:
   // aarf-cd fields below
   uint32_t m_minRtsWnd;
   uint32_t m_maxRtsWnd;
-  bool m_rtsFailsAsDataFails;
   bool m_turnOffRtsAfterRateDecrease;
   bool m_turnOnRtsAfterRateIncrease;
 };
