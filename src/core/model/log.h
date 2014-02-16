@@ -397,7 +397,7 @@ private:
   std::string m_name;
 };
 
-class ParameterLogger : public std::ostream
+class ParameterLogger // : public std::ostream
 {
   int m_itemNumber;
   std::ostream &m_os;
