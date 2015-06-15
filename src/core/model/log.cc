@@ -59,9 +59,10 @@ std::vector<std::string>
 GetLogComponents()
 {
   std::vector<std::string> retval;
-  for (const auto& i : *GetComponentList()) {
-    retval.push_back(i.first);
-  }
+  for (ComponentList::const_iterator i = GetComponentList()->begin(); i != GetComponentList()->end(); ++i)
+    {
+      retval.push_back(i->first);
+    }
   return retval;
 }
 

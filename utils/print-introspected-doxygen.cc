@@ -779,12 +779,13 @@ int main (int argc, char *argv[])
             << std::endl
             << listStart << std::endl;
 
-  for (const auto& logComponent : GetLogComponents())
+  std::vector<std::string> comps = GetLogComponents();
+  for (std::vector<std::string>::const_iterator logComponent = comps.begin(); logComponent != comps.end(); ++logComponent)
     {
       std::cout << indentHtmlOnly
                 <<   listLineStart
                 <<     boldStart
-                << logComponent
+                << *logComponent
                 <<     boldStop
                 <<   listLineStop << std::endl;
     }
